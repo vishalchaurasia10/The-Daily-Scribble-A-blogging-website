@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import blogImage from '../public/main_image.png'
+import Navbar from '../components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,110 +16,40 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
+
+      <svg className='relative top-96 -z-20' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95E2AA" fill-opacity="1" d="M0,192L40,192C80,192,160,192,240,176C320,160,400,128,480,133.3C560,139,640,181,720,192C800,203,880,181,960,181.3C1040,181,1120,203,1200,202.7C1280,203,1360,181,1400,170.7L1440,160L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+
+
+      <div className='flex bg-[#95E2A9] justify-center relative top-[-17rem] -z-10 items-center px-40 pt-15'>
+        <div className="content w-1/2 mr-8 ">
+        <p className='font-bold mb-5 relative top-20 text-6xl'>Hi! there</p>
+        <p className='text-xl my-6 relative top-24'> Welcome to Your Daily Scribble! We&apos;re so glad you&apos;re here. Your Daily Scribble is a place where you can read informative blogs. On our site, you&apos;ll find blogs of differernt category. We publish new posts thrice a week so be sure to check back often for the latest blogs.</p>
+        <Link href='/blogs'><button className='bg-[#fad875] hover:bg-black relative top-24 border border-black text-lg p-1 px-3 mt-6 rounded-lg'>Read More</button></Link>
         </div>
+        <Image className='ml-8 z-10 relative top-12' src={blogImage} height={700} width={700} alt='Blog image'></Image>
+      </div>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
+      <h2 className='mx-40 relative -top-16 text-6xl font-extrabold'>Top Blogs...</h2>
+
+      <div className="blogspeek flex border border-black h-[30rem] w-[50rem] mx-72">
+        <div className="topblog w-1/2 border border-black h-[30rem]"></div>
+        <div className="crousel w-1/2">
+          <div className="nextblogs border border-black h-[15rem]"></div>
+          <div className="nextblogs border border-black h-[15rem]"></div>
         </div>
+      </div>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95E2AA" fill-opacity="1" d="M0,224L40,234.7C80,245,160,267,240,261.3C320,256,400,224,480,197.3C560,171,640,149,720,133.3C800,117,880,107,960,117.3C1040,128,1120,160,1200,154.7C1280,149,1360,107,1400,85.3L1440,64L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     </>
   )
 }
+
+
+
+
+{/* 
+        <p>In the meantime, here are a few of our most popular posts:</p>
+
+[       Insert titles and excerpts of popular posts]
+
+        Thank you for visiting [Blog Name]. We hope you find something here that resonates with you and that you'll join us on this journey. Don't forget to [insert call to action, such as "subscribe to our email list" or "follow us on social media"]. We can't wait to connect with you! */}  
